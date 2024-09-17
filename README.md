@@ -1,6 +1,6 @@
 # Cursus @ 42 Lausanne
 
-This repository contains all my projects from [42 Lausanne](https://www.42lausanne.ch/).
+Hello 👋, this repo contains all my projects from [42 Lausanne](https://www.42lausanne.ch/).
 
 ## Table of Contents
 
@@ -9,8 +9,8 @@ This repository contains all my projects from [42 Lausanne](https://www.42lausan
 - Curriculum
   - Cursus Projects
   - Exams
-
-[All subjects from cursus projects are available here](./subjects).
+ 
+[All subjects are available here](./subjects).
 
 Please note that the topics may have slight differences from when I completed them, as 42 frequently updates these projects to keep them current.
 
@@ -25,7 +25,7 @@ Please note that the topics may have slight differences from when I completed th
 - **Philosophers (Project)**: Simulation of the dining philosophers problem, using multithreading to manage concurrent processes.
 - **Minishell (Project)**: UNIX shell implementation with custom parsing, built-ins, and job control.
 - **Cub3D (Project)**: 3D game inspired by the classic Wolfenstein 3D, using raycasting techniques and a very basic graphic engine from 42.
-- **C++ Modules (Exercises)**: Series of projects designed to introduce C++ using STD, Containers...
+- **C++ Modules (Exercice)**: Series of projects designed to introduce C++ using STD, Containers...
 - **Inception (Project)**: Docker-based project to create and manage multiple virtual environments using container orchestration.
 - **Webserv (Project)**: Implementation of a web server in C++ following the HTTP standard.
 - **ft_transcendence (Final Project)**: Full-stack web application using Docker, JavaScript, Bash, Python, and Rust, integrating a game with user management features.
