@@ -17,7 +17,7 @@ Please note that the topics may have slight differences from when I completed th
 ## Project Descriptions from first to last
 
 - **libft (Library)**: Implementation of essential C library functions from scratch.
-- **ft_printf (Library)**: Custom version of the C `printf` function with added functionality.
+- **ft_printf (Library)**: Personal version of the C `printf` to use for futher project.
 - **get_next_line (Library)**: Function to read and return the next line from a file descriptor.
 - **minitalk (Project)**: A small data transfer program using UNIX signals between processes.
 - **push_swap (Project)**: Sorting algorithm that orders a stack of integers with limited operations.
