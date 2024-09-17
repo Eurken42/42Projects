@@ -1,0 +1,15 @@
+
+body {
+    background-image: url("../images/background2.jpg");
+}
+
+.menu {
+    border-style: groove;
+    width: 400px;
+    background-color: rgb(242, 176, 245);
+}
+
+.download {
+    height: 50px;
+    width: 185px;
+  }

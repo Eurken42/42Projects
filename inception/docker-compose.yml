@@ -1,0 +1,73 @@
+version : '3'
+
+networks:
+  inception:
+    driver: bridge
+
+services:
+    nginx:
+      image: nginx
+      container_name: nginx
+      volumes: 
+        - wordpress:/var/www/wordpress
+      networks:
+      - inception
+      depends_on:
+      - wordpress
+      build:
+        context: srcs/requirements/nginx
+        dockerfile: Dockerfile
+      env_file: 
+        - ./.env
+      ports:
+      - "443:443"
+      restart: on-failure
+    
+    wordpress:
+      image: wordpress
+      container_name: wordpress
+      env_file: 
+      - ./.env
+      volumes:
+        - wordpress:/var/www/wordpress
+      networks:
+      - inception
+      build:
+        context: srcs/requirements/wordpress
+        dockerfile: Dockerfile
+      depends_on:
+      - mariadb
+      restart: on-failure
+      expose:
+      - "9000"
+    mariadb:
+      image: mariadb
+      container_name: mariadb
+      networks:
+      - inception
+      build:
+        context: srcs/requirements/mariadb
+        dockerfile: Dockerfile
+      env_file: 
+        - ./.env
+      volumes:
+        - mariadb:/var/lib/mysql
+      restart: on-failure
+      expose:
+      - "3306"
+
+volumes:
+  wordpress:
+    name : wordpress
+    driver : local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/eurken/data/wordpress
+  mariadb:
+    name : mariadb
+    driver : local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/eurken/data/mariadb

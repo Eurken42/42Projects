@@ -1,0 +1,23 @@
+#####
+# basic ignore
+#####
+*.tmp
+resources/*
+*/test*
+*.swp
+
+
+
+#####
+# C specific ignore
+#####
+*/a.out
+*.o
+
+
+
+#####
+# Folder specific ignore
+#####
+libft.a
+printf/printf

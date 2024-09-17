@@ -1,0 +1,9 @@
+body {
+    background-image: url("../images/pat.jpg");
+}
+
+.pat {
+    border-style: groove;
+    width: 100%;
+    background-color: rgb(242, 176, 245);
+}

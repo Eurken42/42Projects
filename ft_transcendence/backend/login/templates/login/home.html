@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<title> Index </title>
+<h3> Welcome to home page</h3>
+<br>
+	<body>
+	Home page of transcendence
+	{% if user.is_authenticated %}
+		<p>you are logged in</p>
+	{% else %}
+		<p>you are NOT logged in</p>
+	{% endif %}
+	<br>
+	<p>Logout <a href="{% url  'logout_form' %}">HERE</a></p>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+version: '3'
+
+services:
+  postgre:
+    container_name: postgre
+    image: postgre
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - transcendence
+    ports:
+      - "5432"
+    restart: on-failure
+    env_file:
+      - req/.env
+    build:
+      context: postgre
+      dockerfile: Dockerfile
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    container_name: backend
+    image: backend
+    networks:
+      - transcendence
+    ports:
+      - "8000"
+    restart: on-failure
+    env_file:
+      - req/.env
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    depends_on:
+      - postgre
+
+  frontend:
+    container_name: nginx
+    image: frontend
+    networks:
+      - transcendence
+    volumes:
+      - ./frontend/srcs:/var/www/html
+    ports:
+      - "443:443"
+      - "80:80"
+    restart: on-failure
+    env_file:
+      - req/.env
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+
+  cli:
+    container_name: cli
+    image: cli
+    networks:
+      - transcendence
+    ports:
+      - "3000"
+    restart: on-failure
+    build:
+      context: cli
+      dockerfile: Dockerfile
+
+volumes:
+  db:
+    external: false
+    driver: local
+    driver_opts:
+      type: none
+      o : bind
+      device: '~/data/db'
+
+networks:
+  transcendence:
+    driver: bridge

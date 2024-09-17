@@ -1,0 +1,18 @@
+body {
+    background-image: url("../images/barbie.jpg");
+}
+
+.data {
+    border-style: groove;
+    width: 100%;
+    background-color: rgb(242, 176, 245);
+}
+
+.barbie {
+    width: 50%;
+    height: 50%;
+}
+
+.barbie:hover {
+    filter: invert(1);
+}

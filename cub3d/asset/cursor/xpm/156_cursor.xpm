@@ -1,0 +1,23 @@
+/* XPM */
+static char *_56_cursor[] = {
+/* columns rows colors chars-per-pixel */
+"12 12 5 1 ",
+"  c None",
+". c #00FE00",
+"X c #01FE00",
+"o c green",
+"O c #01FF00",
+/* pixels */
+"       XX   ",
+"      XXX   ",
+"      XXX   ",
+"    XXXXX   ",
+"    XXXXXX  ",
+"  XXXXXXXX  ",
+"  XXXXXXXXXX",
+" XXXXXXXXXXX",
+"  X X XXXXXX",
+"            ",
+"            ",
+"            "
+};

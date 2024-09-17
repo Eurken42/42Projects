@@ -1,0 +1,47 @@
+servers:
+  @server[
+    - listen = 8002;
+    - server_name = superbe.com;
+    - clientbody = 600000;
+	- error = ./www/error/;
+    - download = upload2;
+    - route{
+		- / (
+            methods = GET POST;
+            root = /;
+            listing = true;
+            index = ./index.html;
+        )
+		- /admin/ (
+            methods = GET POST;
+            root = /admin/;
+            listing = false;
+            index = ./admin.html;
+        )
+        - /lol/mdr/ (
+            methods = GET POST;
+            root = /lol/;
+            listing = false;
+            index = ./lol.html;
+        )
+    }
+  ]
+  @server[
+    - listen = 80;
+    - server_name = domain1.com;
+    - clientbody = 10;
+    - route{
+        - / (
+            methods = GET POST DELETE;
+            root = /;
+            listing = false;
+            index = ./index.html;
+        )
+        - /admin/ (
+            methods = GET POST;
+            root = /admin/;
+            listing = false;
+            index = ./admin.html;
+        )
+    }
+  ]

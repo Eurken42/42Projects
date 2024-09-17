@@ -1,0 +1,26 @@
+#####
+# basic ignore
+#####
+*.tmp
+resources/*
+*/test*
+*.swp
+
+
+
+#####
+# C specific ignore
+#####
+*/a.out
+*.o
+
+
+
+#####
+# Folder specific ignore
+#####
+libftprintf.a
+libft/libft.a
+libft/bonus
+tests/*
+Makefile.old

@@ -1,0 +1,22 @@
+<html> 
+
+<head> 
+<title="formulaire" />
+</head>
+
+<body> 
+	{% load static %}
+<form method='POST'>
+	{% csrf_token %}
+
+	{{form.as_p}}
+
+<button type="submit"> Login User </button>
+
+</form>
+<br>
+<p> Create a new account <a href="{% url 'signup_form' %}">here</a></p>
+</body>
+
+
+</html>

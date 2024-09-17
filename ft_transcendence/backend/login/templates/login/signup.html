@@ -1,0 +1,32 @@
+<html> 
+
+<head> 
+<title="formulaire" />
+</head>
+
+<body> 
+	
+{% comment %} {% for message in messages %}
+	
+	{% if form.errors %}
+
+		<strong>Message: </strong> {{form.errors}}
+
+	{% else %}
+		<strong>Message: </strong> {{message}}
+	{% endif %}
+
+{% endfor %} {% endcomment %}
+<form method='POST'>
+	{% csrf_token %}
+
+	{{form.as_p}}
+
+<button type="submit"> Create User </button>
+
+</form>
+
+</body>
+
+
+</html>

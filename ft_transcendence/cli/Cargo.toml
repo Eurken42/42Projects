@@ -1,0 +1,19 @@
+[package]
+name = "cli"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ncurses = "5.101.0"
+rpassword = "7.3.1"
+term_size="0.3.2"
+reqwest = { version = "0.12", features = ["json", "blocking", "native-tls", "cookies"] }
+time = "0.3.34"
+colored = "2"
+tungstenite = { version = "0.21.0", features = ["native-tls"] }
+json = "0.12.4"
+native-tls = "0.2.11"
+clearscreen = "3.0.0"
+signal-hook = "0.3.17"
